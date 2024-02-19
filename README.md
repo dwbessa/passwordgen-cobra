@@ -20,3 +20,9 @@ We can read created passwords with
 ```
 ./passwordgen search [network name]
 ```
+
+Obs: We can build it for Windows using the flags:
+```
+GOOS=windows GOARCH=amd64 go build -o passwordgen.exe
+```
+It works just fine in Windows Power Shell
