@@ -11,8 +11,12 @@ go build -o passwordgen
 ```
 
 We can create with 
-```./passwordgen generate```
+```
+./passwordgen generate
+```
 We register the password filling first Network Name (generic name for where this password will be used) and then putting the e-mail
 
 We can read with
-```./passwordgen search [network name]```
+```
+./passwordgen search [network name]
+```
