@@ -10,13 +10,13 @@ go mod download
 go build -o passwordgen
 ```
 
-We can create with 
+We can create password with 
 ```
 ./passwordgen generate
 ```
 We register the password filling first Network Name (generic name for where this password will be used) and then putting the e-mail
 
-We can read with
+We can read created passwords with
 ```
 ./passwordgen search [network name]
 ```
