@@ -39,7 +39,6 @@ var generateCmd = &cobra.Command{
 			return
 		}
 
-		// Ask for network name and email
 		reader := bufio.NewReader(os.Stdin)
 		fmt.Print("Enter network name: ")
 		networkName, _ := reader.ReadString('\n')
@@ -72,14 +71,12 @@ var generateCmd = &cobra.Command{
 			}
 		}
 
-		// Create an Account struct
 		newAccount := Account{
 			Network:  map[string]string{"network": strings.TrimSpace(networkName)},
 			Email:    map[string]string{"email": strings.TrimSpace(email)},
 			Password: map[string]string{"password": password},
 		}
 
-		// Read the existing data from the file
 		fileData, err := os.ReadFile("account.json")
 		if err != nil {
 			fmt.Println("Error reading JSON file:", err)
@@ -96,7 +93,6 @@ var generateCmd = &cobra.Command{
 			}
 		}
 
-		// Append the new account to the slice
 		accounts = append(accounts, newAccount)
 
 		// Marshal the updated slice back into JSON

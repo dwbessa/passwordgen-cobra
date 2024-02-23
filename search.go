@@ -18,14 +18,12 @@ var searchCmd = &cobra.Command{
 		}
 		networkName := args[0]
 
-		// Read the existing data from the file
 		fileData, err := os.ReadFile("account.json")
 		if err != nil {
 			fmt.Println("Error reading JSON file:", err)
 			return
 		}
 
-		// Unmarshal the JSON data into a slice of Accounts
 		var accounts []Account
 		if len(fileData) > 0 {
 			err = json.Unmarshal(fileData, &accounts)
@@ -35,7 +33,6 @@ var searchCmd = &cobra.Command{
 			}
 		}
 
-		// Iterate over the accounts and print the one with the specified network name
 		for _, account := range accounts {
 			if account.Network["network"] == networkName {
 				fmt.Println("Account: ", account.Network["network"])

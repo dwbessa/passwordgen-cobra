@@ -7,7 +7,6 @@ import (
 )
 
 func networkExists(networkName string) bool {
-	// Read the existing data from the file
 	fileData, err := os.ReadFile("account.json")
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)
